@@ -1,38 +1,37 @@
-.App {
-  text-align: center;
+/* Light Theme (Default) */
+.light {
+  background-color: #f8f9fa;
+  color: #212529;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.light .card {
+  background-color: #ffffff;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* Dark Theme */
+.dark {
+  background-color: #212529;
+  color: #f8f9fa;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.dark .card {
+  background-color: #343a40;
+  color: #f8f9fa;
 }
 
-.App-link {
-  color: #61dafb;
+.dark .card-text {
+  color: #adb5bd !important;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.dark h2 {
+  color: #f8f9fa;
+}
+
+/* Card hover effect */
+.card {
+  transition: transform 0.2s ease-in-out;
+}
+
+.card:hover {
+  transform: translateY(-5px);
 }
