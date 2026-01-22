@@ -23,10 +23,10 @@ const BookList = () => {
   if (loading) {
     return (
       <div className="text-center py-5">
-        <div className="spinner-border text-primary" role="status">
+        <div className="spinner-border text-primary" style={{ width: "3rem", height: "3rem" }} role="status">
           <span className="visually-hidden">Yükleniyor...</span>
         </div>
-        <p className="mt-2">Ürünler yükleniyor...</p>
+        <p className="mt-3 text-secondary">Ürünler yükleniyor...</p>
       </div>
     );
   }
@@ -34,17 +34,22 @@ const BookList = () => {
   if (filteredBooks.length === 0) {
     return (
       <div className="text-center py-5">
-        <i className="bi bi-search display-1 text-muted"></i>
-        <h4 className="mt-3 text-muted">Sonuç bulunamadı</h4>
-        <p className="text-muted">"{searchTerm}" için sonuç bulunamadı.</p>
+        <div className="bg-light rounded-circle d-inline-flex align-items-center justify-content-center mb-4" style={{ width: "120px", height: "120px" }}>
+          <i className="bi bi-search display-4 text-secondary"></i>
+        </div>
+        <h4 className="text-dark fw-bold">Sonuç bulunamadı</h4>
+        <p className="text-secondary">"{searchTerm}" için sonuç bulunamadı.</p>
       </div>
     );
   }
 
   return (
     <>
-      <p className="text-muted mb-3">{filteredBooks.length} kitap bulundu</p>
-      <div className="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4 g-4">
+      <p className="text-secondary mb-4">
+        <span className="badge bg-primary rounded-pill me-2">{filteredBooks.length}</span>
+        kitap bulundu
+      </p>
+      <div className="row row-cols-1 row-cols-sm-2 row-cols-lg-3 row-cols-xl-4 g-4">
         {filteredBooks.map((book) => (
           <div className="col" key={book.id}>
             <BookCard book={book} />

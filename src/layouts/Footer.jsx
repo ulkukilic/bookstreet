@@ -1,12 +1,12 @@
 const Footer = () => {
   return (
-    <footer className="bg-dark text-light py-4 mt-auto">
+    <footer className="bg-light border-top py-4 mt-auto">
       <div className="container text-center">
-        <p className="mb-1">
-          <i className="bi bi-book me-2"></i>
+        <p className="mb-2 text-primary fw-bold">
+          <i className="bi bi-book-half me-2"></i>
           BookStreet
         </p>
-        <small className="text-muted">© 2025 Tüm hakları saklıdır.</small>
+        <small className="text-secondary">© 2025 Tüm hakları saklıdır.</small>
       </div>
     </footer>
   );
